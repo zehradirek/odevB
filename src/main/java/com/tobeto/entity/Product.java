@@ -2,7 +2,6 @@ package com.tobeto.entity;
 
 import java.io.Serializable;
 import java.util.List;
-import java.util.UUID;
 
 
 import jakarta.persistence.Column;
