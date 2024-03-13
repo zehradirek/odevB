@@ -48,8 +48,7 @@ CREATE TABLE rack
     rack_row         VARCHAR(45) NOT NULL,
     rack_count         INT(1)  NULL,
     rack_capacity         INT(1) NOT NULL,
-     product_id BINARY(16),  
-    FOREIGN KEY (product_id) REFERENCES product (id),
+    
     PRIMARY KEY (id)
 );
 
@@ -59,8 +58,7 @@ CREATE TABLE category
 (
     id            BINARY(16)  NOT NULL,
     category_name  VARCHAR(45) NOT NULL,
-    product_id BINARY(16),    
-    FOREIGN KEY (product_id) REFERENCES product (id),
+   
     PRIMARY KEY (id)
 );
 
