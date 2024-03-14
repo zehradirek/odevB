@@ -14,10 +14,14 @@ import jakarta.persistence.Id;
 
 import jakarta.persistence.ManyToOne;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class User implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
@@ -33,8 +37,7 @@ public class User implements Serializable {
 
 	    @Column(name = "email")
 	    private String email;
-	    
-	      
+
 	    @ManyToOne
 		private Role role;
 	
