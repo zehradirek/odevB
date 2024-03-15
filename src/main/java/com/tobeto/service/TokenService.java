@@ -16,7 +16,6 @@ import java.time.Instant;
 import java.time.temporal.ChronoUnit;
 import java.util.Date;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 @Service
@@ -26,16 +25,10 @@ public class TokenService {
 
     public String createToken(User user) {
         JwtBuilder builder = Jwts.builder();
-        List<Role> usersRole = (List<Role>) user.getRole();
-
-        String[] roles = new String[usersRole.size()];
-        for (int i = 0; i < usersRole.size(); i++) {
-            roles[i] = usersRole.get(i).getRole();
-        }
-
+        Role usersRole = user.getRole();
         // add custom keys
         Map<String, Object> customKeys = new HashMap<>();
-        customKeys.put("roles", roles);
+        customKeys.put("roles", usersRole);
         customKeys.put("userId", user.getId().toString());
         builder = builder.claims(customKeys);
         Instant tarih = Instant.now().plus(15, ChronoUnit.MINUTES);

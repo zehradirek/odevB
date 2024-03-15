@@ -1,6 +1,7 @@
 package com.tobeto.config;
 
 
+import com.tobeto.entity.Role;
 import com.tobeto.filter.JwtAuthorizationFilter;
 import lombok.AllArgsConstructor;
 import org.springframework.context.annotation.Bean;
@@ -34,11 +35,13 @@ public class SecurityConfig {
 	@Bean
 	SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
 		// @formatter:off
+		Role role = new Role();
 		http
 		.csrf(AbstractHttpConfigurer::disable)
 		.authorizeHttpRequests(authorize -> authorize
 						.requestMatchers(WHITE_LIST_URLS).permitAll()
 						.requestMatchers("/api/v1/login", "/api/v1/signup").permitAll()
+//						.requestMatchers(HttpMethod.GET,"/api/v1/products/**").hasAnyRole(role.getRole())
 				.anyRequest().authenticated()
 				)
 		     .sessionManagement(s -> s.sessionCreationPolicy(SessionCreationPolicy.STATELESS))

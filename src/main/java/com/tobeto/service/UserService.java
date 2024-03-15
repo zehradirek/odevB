@@ -61,7 +61,7 @@ public class UserService {
         User optionalUser = userRepository.findById(user.getId())
                 .orElseThrow(() -> new RuntimeException("User not found"));
         optionalUser.setRole(user.getRole());
-        userRepository.save(user);
+        userRepository.save(optionalUser);
     }
 
     @Transactional
@@ -79,7 +79,7 @@ public class UserService {
     }
 
     public User getUserByEmail(String email) {
-        return userRepository.findByEmail(email).orElseThrow(() -> new RuntimeException("User not found"));
+        return userRepository.findByEmail(email).orElse(null);
     }
 
     public User signUp(String email, String password) {

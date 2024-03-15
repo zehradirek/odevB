@@ -1,15 +1,12 @@
 package com.tobeto.entity;
 
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import jakarta.persistence.*;
+import lombok.Data;
+
 import java.io.Serializable;
 import java.util.List;
-
-
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
-import lombok.Data;
 
 
 @Entity
@@ -24,6 +21,7 @@ public class Role implements Serializable {
     private String role;
     
     @OneToMany(mappedBy = "role")
-    private List<User> users;  
+    @JsonIgnore
+    private List<User> users;
       
 }
