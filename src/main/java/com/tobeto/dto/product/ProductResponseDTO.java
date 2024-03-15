@@ -10,12 +10,11 @@ import java.util.UUID;
 @AllArgsConstructor
 @NoArgsConstructor
 public class ProductResponseDTO {
-    private UUID id;
+    private int id;
     private String productName;
     private double unitPrice;
     private int unitInStock;
     private int minStock;
     private String productDescription;
     private int rackId;
-    private int categoryId;
 }

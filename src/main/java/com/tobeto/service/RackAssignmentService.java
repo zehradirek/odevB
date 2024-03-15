@@ -16,7 +16,7 @@
         private ProductService productService;
 
         @Autowired
-        private RackService rackService;
+        private RackService rackService;/*
 
         public void assignProductsToRacks() {
             List<Product> products = productService.getAllProducts();
@@ -51,16 +51,16 @@
 
             return suitableRacks;
         }
-
+*/
+       /*
         private void assignProductToRack(Product product, Rack rack) {
             // Update the product's rack association
             product.getRacks().add(rack); // Assuming getRacks() returns the list of racks in the Product class
             productService.saveProduct(product);
 
             // Update the rack's capacity
-            rack.setRackCapacity(rack.getRackCapacity() - 1);
-            rackService.saveRack(rack);
-        }
-
-
+         rack.setRackCapacity(rack.getRackCapacity() - 1);
+           rackService.saveRack(rack);
+       }
+*/
     }

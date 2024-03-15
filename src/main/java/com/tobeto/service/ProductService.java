@@ -35,7 +35,7 @@ public class ProductService {
     }
 
     //method for updating product by id
-    public void updateProduct(int id, String productName, double unitPrice, int unitInStock, int minStock, String productDescription, Category category) {
+    public void updateProduct(int id, String productName, double unitPrice, int unitInStock, int minStock, String productDescription) {
         Optional<Product> oProduct = productRepository.findById(id);
         if (oProduct.isPresent()) {
             Product product = oProduct.get();
@@ -44,7 +44,6 @@ public class ProductService {
             product.setUnitInStock(unitInStock);
             product.setMinStock(minStock);
             product.setProductDescription(productDescription);
-            product.setCategory(category);
             productRepository.save(product);
         }
     }

@@ -31,9 +31,10 @@ public class RackController {
     //creating racks
     @PostMapping("/create")
     public SuccessResponseDTO createRacks(@RequestBody RackRequestDTO dto) {
-        int count = rackService.createRacks(dto.getRackCapacity(),dto.getRackCount());
+        int count = rackService.createRacks(dto);
         return new SuccessResponseDTO(String.valueOf(count));
     }
+
 
     //get all racks
     @GetMapping("/get")

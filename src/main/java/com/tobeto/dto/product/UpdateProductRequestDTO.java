@@ -11,5 +11,4 @@ public class UpdateProductRequestDTO {
     private int unitInStock;
     private int minStock;
     private String productDescription;
-    private Category category;
 }

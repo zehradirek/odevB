@@ -39,7 +39,7 @@ public class ProductController {
         productService.createProduct(product);
 
         // Call the method to assign products to racks after creating the product
-        rackAssignmentService.assignProductsToRacks();
+        //rackAssignmentService.assignProductsToRacks();
 
         return new SuccessResponseDTO();
     }
@@ -61,7 +61,7 @@ public class ProductController {
     //update product by id
     @PostMapping("/update")
     public SuccessResponseDTO updateProduct(@RequestBody UpdateProductRequestDTO dto) {
-        productService.updateProduct(dto.getId(), dto.getProductName(), dto.getUnitPrice(), dto. getUnitInStock(), dto.getMinStock(), dto.getProductDescription(), dto.getCategory());
+        productService.updateProduct(dto.getId(), dto.getProductName(), dto.getUnitPrice(), dto. getUnitInStock(), dto.getMinStock(), dto.getProductDescription());
         return new SuccessResponseDTO();
     }
 }
