@@ -1,16 +1,10 @@
 package com.tobeto.entity;
 
+import jakarta.persistence.*;
+import lombok.Data;
+
 import java.io.Serializable;
 import java.util.List;
-
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-
-import jakarta.persistence.OneToMany;
-import lombok.Data;
 
 
 
@@ -25,8 +19,8 @@ public class Category implements Serializable {
 
 	@Column(name = "category_name")
 	private String categoryName;
-	
-	@OneToMany(mappedBy = "category") //onetoMany
+
+	@OneToMany
 	private List<Product> products;
 	
 	
