@@ -7,9 +7,6 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class RackRequestDTO {
-    private char rackColumn;
-    private char rackRow;
-    private int rackCount;
-    private int rackCapacity;
+public class SuccessResponseDTO {
+	private String message = "success";
 }

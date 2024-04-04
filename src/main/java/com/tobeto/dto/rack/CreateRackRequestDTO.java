@@ -7,10 +7,7 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class RackResponseDTO {
-
-	private int id;
+public class CreateRackRequestDTO {
 	private int rackCount;
 	private int rackCapacity;
-	private String image;
 }

@@ -22,4 +22,19 @@ public class RackService {
 		return rackRepository.findByIdAndRackCount(id, rackCount);
 	}
 
+	public int createRacks(int rackCapacity, int rackCount) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	public void deleteRack(int id) {
+		// TODO Auto-generated method stub
+
+	}
+
+	public void updateRack(int id, int rackCapacity) {
+		// TODO Auto-generated method stub
+
+	}
+
 }
