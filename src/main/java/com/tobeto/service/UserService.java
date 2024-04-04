@@ -29,13 +29,13 @@ public class UserService {
 	}
 
 	@Transactional
-	public void deleteUser(User user) {
-		userRepository.delete(user);
+	public void deleteUser(String username, String password) {
+		userRepository.delete(null);
 	}
 
 	@Transactional
-	public void updateUser(User user) {
-		userRepository.save(user);
+	public void updateUser(String email, String password) {
+		Optional<User> oUser = userRepository.findByEmail(email);
 	}
 
 	public List<User> getAllUsers() {
