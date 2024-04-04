@@ -7,7 +7,7 @@ CREATE TABLE role
 CREATE TABLE user
 (
     id        BINARY(16)   NOT NULL,
-    user_name VARCHAR(45)  NULL,
+    username VARCHAR(45)  NULL,
     password  VARCHAR(200) NOT NULL,
     email     VARCHAR(200) NOT NULL,
     role_id   INT UNSIGNED NOT NULL,
@@ -27,8 +27,6 @@ CREATE TABLE category
 CREATE TABLE rack
 (
     id            INT UNSIGNED AUTO_INCREMENT NOT NULL,
-    rack_column   VARCHAR(45)                 NOT NULL,
-    rack_row      VARCHAR(45)                 NOT NULL,
     rack_count    INT                         NULL,
     rack_capacity INT                         NOT NULL,
     PRIMARY KEY (id)

@@ -1,13 +1,17 @@
 package com.tobeto.entity;
 
-import jakarta.persistence.*;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.ToString;
-
 import java.io.Serializable;
 import java.util.List;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.ToString;
 
 @Entity
 @Data
@@ -19,18 +23,11 @@ public class Rack implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 
-	@Column(name = "rack_coloumn")
-	private char rackColumn;
-	
-	@Column(name = "rack_row")
-	private char rackRow;
-	
 	@Column(name = "rack_count")
-	private  int rackCount;
-	
-	@Column(name = "rack_capacity")
-	private  int rackCapacity;
+	private int rackCount;
 
+	@Column(name = "rack_capacity")
+	private int rackCapacity;
 
 	@OneToMany(mappedBy = "rack")
 	private List<Product> products;
