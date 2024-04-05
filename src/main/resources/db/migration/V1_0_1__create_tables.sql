@@ -1,10 +1,10 @@
-CREATE TABLE role
+CREATE TABLE Roles
 (
     id   INT UNSIGNED AUTO_INCREMENT NOT NULL PRIMARY KEY,
     role VARCHAR(45)                 NOT NULL
 );
 
-CREATE TABLE user
+CREATE TABLE Users
 (
     id        BINARY(16)   NOT NULL,
     username VARCHAR(45)  NULL,
@@ -14,17 +14,17 @@ CREATE TABLE user
     PRIMARY KEY (id),
     CONSTRAINT fk_role_id
         FOREIGN KEY (role_id)
-            REFERENCES role (id)
+            REFERENCES Roles (id)
 );
 
-CREATE TABLE category
+CREATE TABLE Categories
 (
     id            INT UNSIGNED AUTO_INCREMENT  NOT NULL,
     category_name VARCHAR(45)  NOT NULL,
     PRIMARY KEY (id)
 );
 
-CREATE TABLE rack
+CREATE TABLE Racks
 (
     id            INT UNSIGNED AUTO_INCREMENT NOT NULL,
     rack_count    INT                         NULL,
@@ -32,7 +32,7 @@ CREATE TABLE rack
     PRIMARY KEY (id)
 );
 
-CREATE TABLE product
+CREATE TABLE Products
 (
     id            INT UNSIGNED AUTO_INCREMENT NOT NULL,
     product_name  VARCHAR(45)                 NOT NULL,
@@ -45,10 +45,10 @@ CREATE TABLE product
     PRIMARY KEY (id),
     CONSTRAINT fk_category_id
     FOREIGN KEY (category_id)
-    REFERENCES category (id),
+    REFERENCES Categories (id),
     CONSTRAINT fk_rack_id
     FOREIGN KEY (rack_id)
-    REFERENCES rack (id)
+    REFERENCES Racks (id)
     );
 
 

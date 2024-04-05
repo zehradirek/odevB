@@ -9,6 +9,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
+import jakarta.persistence.Table;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
@@ -17,6 +18,7 @@ import lombok.ToString;
 @Data
 @ToString(exclude = "product")
 @EqualsAndHashCode(exclude = "product")
+@Table(name = "Racks")
 public class Rack implements Serializable {
 	private static final long serialVersionUID = 1L;
 	@Id
