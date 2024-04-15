@@ -4,13 +4,11 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.UUID;
-
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class ProductResponseDTO {
-    private UUID id;
+    private int id;
     private String productName;
     private double unitPrice;
     private int unitInStock;
