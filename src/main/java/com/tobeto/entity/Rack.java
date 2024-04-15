@@ -19,7 +19,7 @@ public class Rack implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 
-	@Column(name = "rack_coloumn")
+	@Column(name = "rack_column")
 	private char rackColumn;
 	
 	@Column(name = "rack_row")
